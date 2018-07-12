@@ -13,7 +13,6 @@ class Posts extends Component {
       .then(data => {
         this.setState(() => ({posts: data}))
       })
-  
   }
 
 
