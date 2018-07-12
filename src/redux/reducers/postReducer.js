@@ -1,15 +1,26 @@
-import {FETCH_POSTS} from '../actions/types'
+import {FETCH_POSTS, NEW_POST} from '../actions/types'
 
-const postReducer = (state = [], action) => {
+const initialState = {
+  items: [],
+  item: {}
+}
+
+const postReducer = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_POSTS:
       return {
         ...state,
-        ...action.posts
+        items: action.data
+      }
+    case NEW_POST:
+    
+      return {
+        ...state,
+        item: action.neuPost,
       }
 
     default:
-      return {}  
+      return state   
   }
 }
 
